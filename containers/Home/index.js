@@ -22,6 +22,10 @@ const HomeContainer = () => {
             }
           >
             This is for teachers.
+               <br />
+            <Link href="/teachers-list"> <Button type="link"  >
+          View Teachers
+        </Button></Link>
           </Card>
           <Card
             title="Continue as a Student"
@@ -35,6 +39,10 @@ const HomeContainer = () => {
             }
           >
             This is for students.
+            <br />
+              <Link href="/student-list"> <Button type="link"  >
+          View Student
+        </Button></Link>
           </Card>
         </div>
       </div>

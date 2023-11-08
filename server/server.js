@@ -15,7 +15,7 @@ server.use(bodyParser.json());
 server.use(cors());
 
 // Serve static files (e.g., your compiled Next.js frontend)
-server.use(express.static(path.join(__dirname, '.next/static'));
+server.use(express.static(path.join(__dirname, '.next/static')));
 
 // Define API routes for saving teacher and student data
 server.post('/api/teachers', (req, res) => {
@@ -48,3 +48,5 @@ server.listen(port, (err) => {
   if (err) throw err;
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+module.exports = server

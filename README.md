@@ -38,12 +38,14 @@ Please note that this is a basic setup. You can expand and customize it as neede
 # Getting Started
 To run the project locally, you can use the following commands:
 
-Start the development server:
-```npm run dev```
+## Running Frontend
+```npm run dev``` 
+
+## Running Server
+
+```npm run dev:server```
 
 This will launch the Next.js frontend and the Express server.
 
-To build the production version of the project:
-```npm run build```
 
 This is a basic README structure. You can add more details, such as how to deploy the application or how to set up environment variables, depending on your project's requirements.

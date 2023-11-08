@@ -1,6 +1,6 @@
 // __server_tests__/server.test.js
 const request = require('supertest');
-const server = require('../server');
+const server = require('../server/server.js');
 
 // Test data for a teacher
 const teacherData = {

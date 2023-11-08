@@ -1,12 +1,10 @@
 // pages/index.js
 import React from 'react';
-
+import StudentList from '../containers/StudentList';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Next.js Frontend</h1>
-    </div>
+    <StudentList />
   );
 };
 

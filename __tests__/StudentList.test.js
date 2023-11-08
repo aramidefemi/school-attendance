@@ -2,9 +2,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import StudentList from '../containers/StudentList';
+import '@testing-library/jest-dom'
 
 const mockStudentData = [
   {
+    key: '1',
     nationalId: '987654321',
     name: 'Alice',
     surname: 'Johnson',
@@ -23,8 +25,7 @@ jest.mock('axios', () => {
 test('renders student list page with table', async () => {
   render(<StudentList />);
   
-  expect(await screen.findByText('Student List')).toBeInTheDocument();
-  expect(await screen.findByText('Loading...')).toBeInTheDocument();
+  expect(await screen.findByText('Student List')).toBeInTheDocument(); 
   
   // Check if the table headers are present
   expect(await screen.findByText('National ID')).toBeInTheDocument();

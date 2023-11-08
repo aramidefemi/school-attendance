@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Input, Select, DatePicker, Button } from 'antd';
-import axios from 'axios';
-import styles from './TeacherForm.module.css';
+import axios from 'axios'; 
 
 const { Option } = Select;
 

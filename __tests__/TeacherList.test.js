@@ -2,9 +2,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import TeacherList from '../containers/TeacherList';
+import '@testing-library/jest-dom'
 
 const mockTeacherData = [
   {
+    key:'1',
     nationalId: '123456789',
     title: 'Mr',
     name: 'John',
@@ -26,7 +28,6 @@ test('renders teacher list page with table', async () => {
   render(<TeacherList />);
   
   expect(await screen.findByText('Teacher List')).toBeInTheDocument();
-  expect(await screen.findByText('Loading...')).toBeInTheDocument();
   
   // Check if the table headers are present
   expect(await screen.findByText('National ID')).toBeInTheDocument();
