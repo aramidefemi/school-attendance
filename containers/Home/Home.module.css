@@ -1,0 +1,26 @@
+/* HomeContainer.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  text-align: center;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  width: 300px;
+}
+
+.cardButton {
+  border-radius: 20px;
+}
