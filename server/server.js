@@ -1,16 +1,42 @@
-// server.js
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const server = express();
 const port = process.env.PORT || 4000;
 
-// Serve static files (e.g., your compiled Next.js frontend)
-server.use(express.static(path.join(__dirname, '.next/static')));
+// In-memory storage for teachers and students
+const teachersData = [];
+const studentsData = [];
 
-// Define your API routes, if any
-server.get('/api/someRoute', (req, res) => {
-  res.json({ message: 'This is an API route' });
+// Middleware for handling JSON request bodies
+server.use(bodyParser.json());
+server.use(cors());
+
+// Serve static files (e.g., your compiled Next.js frontend)
+server.use(express.static(path.join(__dirname, '.next/static'));
+
+// Define API routes for saving teacher and student data
+server.post('/api/teachers', (req, res) => {
+  const teacherData = req.body;
+  teachersData.push(teacherData);
+  res.json({ message: 'Teacher data saved successfully' });
+});
+
+server.post('/api/students', (req, res) => {
+  const studentData = req.body;
+  studentsData.push(studentData);
+  res.json({ message: 'Student data saved successfully' });
+});
+
+// Define API routes for retrieving teachers and students list
+server.get('/api/teachers', (req, res) => {
+  res.json(teachersData);
+});
+
+server.get('/api/students', (req, res) => {
+  res.json(studentsData);
 });
 
 // Handle all other requests
