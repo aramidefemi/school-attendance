@@ -4,6 +4,7 @@
 
 This project is a simple boilerplate for a Next.js application with an integrated Express backend. Here's an overview of the project structure:
 
+```
 my-nextjs-app/
 │
 ├── pages/ # Frontend React components and pages
@@ -17,6 +18,7 @@ my-nextjs-app/
 ├── package.json # Project dependencies and scripts
 │
 └── README.md # Documentation (you are here)
+```
 
 ## Running Frontend Tests
 

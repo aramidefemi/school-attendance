@@ -1,7 +1,7 @@
 // pages/index.js
 import React from 'react';
 
-import HomeContainer from '../containers/StudentForm';
+import StudentForm from '../containers/StudentForm';
 const Home = () => {
   return (
     <StudentForm />

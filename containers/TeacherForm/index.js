@@ -1,23 +1,38 @@
 import React, { useState } from 'react';
-import { Form, Input, Select, DatePicker, Button } from 'antd';
+import { Form, Input, Select, DatePicker, Button, message } from 'antd';
 import axios from 'axios'; 
+import Link from 'next/link';
+import styles from './TeacherForm.module.css';
 
 const { Option } = Select;
 
 const TeacherForm = () => {
   const [form] = Form.useForm();
+   const [messageApi, contextHolder] = message.useMessage();
 
   const onFinish = async (values) => {
     try {
-      // Perform an API call to save teacher details (replace with your API endpoint)
-      const response = await axios.post('/api/teachers', values);
-      console.log('Teacher details saved:', response.data);
+          messageApi.open({
+      type: 'loading',
+      content: 'saving details...',
+      duration: 0,
+        });
+      
+      const response = await axios.post('http://localhost:4000/api/teachers', values);
+
+      setTimeout(messageApi.destroy, 1500);
+       
     } catch (error) {
       console.error('Error saving teacher details:', error);
     }
   };
 
   return (
+      <div className={styles.container}>
+      <div className={styles.content}>
+        {contextHolder}
+        <h1>Sign up as a student</h1>
+        <div className={styles.cardContainer}> 
     <Form form={form} onFinish={onFinish}>
       <Form.Item label="National ID Number" name="nationalId" rules={[{ required: true, message: 'Please input your National ID Number' }]}>
         <Input />
@@ -49,9 +64,13 @@ const TeacherForm = () => {
       <Form.Item>
         <Button type="primary" htmlType="submit">
           Save Teacher Details
-        </Button>
+        </Button> <Link href="/teachers-list"> <Button type="link"  >
+          View Teachers
+        </Button></Link>
       </Form.Item>
-    </Form>
+    </Form>        </div>
+      </div>
+    </div>
   );
 };
 
