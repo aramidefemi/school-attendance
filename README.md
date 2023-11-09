@@ -8,12 +8,14 @@ This project is a simple boilerplate for a Next.js application with an integrate
 my-nextjs-app/
 │
 ├── pages/ # Frontend React components and pages
-│ └── index.js # Sample Next.js page
+|
+├── containers/ # contain pages components
+|
+├── tests/ # frontend tests
 │
 ├── server_tests/ # Server-side tests
-│ └── server.test.js # Tests for the Express server
 │
-├── server.js # Express server setup
+├── server/server.js # Express server setup 
 │
 ├── package.json # Project dependencies and scripts
 │
@@ -40,14 +42,11 @@ Please note that this is a basic setup. You can expand and customize it as neede
 # Getting Started
 To run the project locally, you can use the following commands:
 
-## Running Frontend
-```npm run dev``` 
+## Running Server & Frontend
 
-## Running Server
-
-```npm run dev:server```
+```
+npm run dev 
+npm run dev:server
+```
 
 This will launch the Next.js frontend and the Express server.
-
-
-This is a basic README structure. You can add more details, such as how to deploy the application or how to set up environment variables, depending on your project's requirements.
